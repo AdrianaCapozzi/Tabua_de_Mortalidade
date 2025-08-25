@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora – Tábua de Mortalidade EMS‑BR</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1>Calculadora – EMS‑BR</h1>
+      <p class="subtitle">Informe a idade do segurado e obtenha q<sub>x</sub> e p<sub>x</sub>.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Entrada</h2>
+      <div class="grid">
+        <div class="field">
+          <label for="idade">Idade (anos completos)</label>
+          <input id="idade" type="number" min="0" max="120" placeholder="Ex.: 35" />
+        </div>
+        <div class="field">
+          <label>&nbsp;</label>
+          <button id="btnCalcular" class="btn-primary">Calcular</button>
+        </div>
+      </div>
+      <details class="hint">
+        <summary>Carregar tábua EMS‑BR via CSV (opcional)</summary>
+        <p>Você pode carregar a tábua oficial <code>idade,qx</code> (separador vírgula). Exemplo de linhas: <code>35,0.00065</code></p>
+        <input id="csvInput" type="file" accept=".csv" />
+        <div id="csvStatus" class="status"></div>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>Resultado</h2>
+      <div id="resultado" class="resultado">
+        <p class="muted">Nenhum cálculo ainda. Informe a idade e clique em Calcular.</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Observações</h2>
+      <ul class="notes">
+        <li>Esta calculadora exibe <strong>q<sub>x</sub></strong> (probabilidade de morte entre as idades x e x+1) e <strong>p<sub>x</sub> = 1 − q<sub>x</sub></strong>.</li>
+        <li>Por padrão, carregamos uma <em>amostra demonstrativa</em> de valores para algumas idades. Para uso real, <strong>carregue o CSV da tábua EMS‑BR</strong>.</li>
+        <li>As grandezas são anuais e referem-se a vidas íntegras, sem ajustes de seleção, melhorias, carregamentos ou sexagem (exemplo acadêmico).</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>© Seu Projeto – EMS‑BR (exemplo acadêmico). Paleta inspirada em tons de vermelho.</small>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
